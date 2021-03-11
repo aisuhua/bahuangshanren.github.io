@@ -45,7 +45,7 @@ Packet Loss:     0.0%
 /usr/share/ssl/certs/ca-bundle.crt
 /usr/local/share/certs/ca-root-nss.crt
 /etc/ssl/cert.pem
-</code></pre></td></tr></table></div></div><p>如果测试中的设备<em>没有</em>以上提到的文件之一，那么curl项目提供的规范和最新的CA证书包可以手动完成下载到特定位置。可根据以下示例将此特定位置作为参数提供：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</code></pre></td></tr></table></div></div><p>如果测试中的设备<strong>没有</strong>以上提到的文件之一，那么curl项目提供的规范和最新的CA证书包可以手动完成下载到特定位置。可根据以下示例将此特定位置作为参数提供：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span></code></pre></td><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell>wget https://curl.haxx.se/ca/cacert.pem
 ./ookla --ca-certificate<span class=o>=</span>./cacert.pem
