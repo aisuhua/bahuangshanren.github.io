@@ -4,14 +4,21 @@
 ## 下载地址
 
 来自 speedtest.net 的 [Speedtest_Cli](https://www.speedtest.net/zh-Hans/apps/cli) 
-> 不是 speedtest.cn 
+
+{{< admonition type=info title="注意" open=true >}}
+不是 speedtest.cn 的 [命令行测速工具](https://www.speedtest.cn/cli)
+{{< /admonition >}}
 
 ## 简介
 ```
 speedtest 
-    [-aAbBfhiIpPsv] [--ca-certificate=path] [--format=[=format-type]] [--help] [--interface=interface]
-    [--ip=ip_address] [--output-header] [--precision=num_decimal_places] [--progress=yes|no]
-    [--selection-details] [--server-id=id] [--servers] [--unit=[=unit-of-measure]] [--version]
+    [-aAbBfhiIpPsv] [--ca-certificate=path] 
+    [--format=[=format-type]] [--help] 
+    [--interface=interface] [--ip=ip_address] 
+    [--output-header] [--precision=num_decimal_places] 
+    [--progress=yes|no] [--selection-details] 
+    [--server-id=id] [--servers] 
+    [--unit=[=unit-of-measure]] [--version]
 ```
 
 ## 选项
@@ -25,7 +32,9 @@ speedtest
 | **-o** *hostname*, **--host**=*hostname*         | 从服务器列表中使用其主机名指定服务器               |
 | **-f**  *format_type*,**--format**=*format_type* | 输出格式（默认值=**human-readable**）              |
 
-> 注意：Machine readable（csv、tsv、json、json、json pretty）使用字节作为最大精度的测量单位。
+{{< admonition type=info title="注意" open=true >}}
+Machine readable（csv、tsv、json、json、json pretty）使用字节作为最大精度的测量单位。
+{{< /admonition >}}
 
   *format_type* 值如下：
 

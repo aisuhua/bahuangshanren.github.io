@@ -5,13 +5,15 @@
 
 虽说下载的都是独立的软件安装包，但还是会安装Adobe Creative Cloud。如果电脑上已经存在新版的Adobe Creative Cloud，这个旧版本的Adobe Creative Cloud可能还会与之冲突。
 
-> 推荐使用 [**vposy**](https://weibo.com/vposy?refer_flag=1005055013_&is_all=1) 处理过的Adobe系列软件，可以下载独立版，还没有恼人的Adobe Creative Cloud。
->
-> 要注意的是他新浪微博的个人置顶帖仅粉丝可见。
+{{< admonition type=tip title="推荐" open=false >}}
+推荐使用 [**vposy**](https://weibo.com/vposy?refer_flag=1005055013_&is_all=1) 处理过的Adobe系列软件，可以下载独立版，还没有恼人的Adobe Creative Cloud。
 
+要注意的是他新浪微博的个人置顶帖仅粉丝可见。
+{{< /admonition >}}
 
-
-> 以下个别地址不挂代理速度会很慢，个别地址就算挂上代理速度仍然会很慢🙃
+{{< admonition type=info title="注意" open=true >}}
+以下个别地址不挂代理速度会很慢，个别地址就算挂上代理速度仍然会很慢🙃
+{{< /admonition >}}
 
 ### Adobe CC 2018
 

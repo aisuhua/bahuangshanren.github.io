@@ -76,17 +76,19 @@ cnpm -v
 
 ## 安装Hexo
 
-在合适的地方新建一个文件夹，名称任意。我的这个文件夹是`E:/Blog`，对于这个文件夹我的理解是：
+在合适的地方新建一个文件夹，名称任意。我的这个文件夹是`E:/Blog`，对于这个文件夹，
 
-> 它其实就是常用的、所谓的“Hexo目录”，Hexo就安装在这里，博客的所有数据都存在这里。
->
-> GitHub仓库里的博客文件其实是Hexo目录下的public文件夹里的内容：
->
-> 每次用Git Bash输入`hexo g`命令时，静态博客都会被生成到`E:/Blog/public`中，输入`hexo d`命令后，再被推送到仓库的`master`分支（默认为`master`）
+{{< admonition type=note title="我的理解" open=true >}}
+它其实就是常提到的所谓“Hexo目录”，Hexo就安装在这里，博客的所有数据都存在这里。
 
-> 不要在安装Hexo之前，先行把创建的仓库克隆到本地，然后又在该仓库文件夹下安装Hexo，这是行不通的，Hexo只能在空文件夹下安装并初始化（初始化其实就是把Hexo的项目仓库克隆到本地）。
+GitHub仓库里的博客文件其实是Hexo目录下的public文件夹里的内容：
 
-> 我把创建仓库的内容往后排了，为了避免有人像我刚接触这些概念时，因为没有理清楚GitHub仓库与Hexo文件夹的关系而犯同样的错。
+每次用Git Bash输入`hexo g`命令时，静态博客都会被生成到`E:/Blog/public`中，输入`hexo d`命令后，再被推送到仓库的`master`分支（默认为`master`）
+{{< /admonition >}}
+
+{{< admonition type=warning title="注意" open=true >}}
+不要在安装Hexo之前，先行把创建的仓库克隆到本地，然后又在该仓库文件夹下安装Hexo，这是行不通的，Hexo只能在空文件夹下安装并初始化（初始化其实就是把Hexo的项目仓库克隆到本地）。
+{{< /admonition >}}
 
 - 在Hexo目录下空白处右键点击`Git Bash Here`打开Git Bash。
 - 或者打开Git Bash.exe，在Git Bash输入cd命令定位到Hexo目录下（大小写无所谓），比如：
@@ -186,13 +188,17 @@ Hi your_name! You've successfully authenticated, but GitHub does not provide she
 
 ### 使用SSH连接到Coding
 
-> 如果和我一样，**GitHub和Coding的注册邮箱`相同`**的话，这一步继续按照这篇文章来操作
+{{< admonition type=info title="注意" open=true >}}
+如果和我一样，GitHub和Coding的注册邮箱 **相同** 的话，这一步继续按照这篇文章来操作。
+{{< /admonition >}}
 
-> 如果**GitHub和Coding的注册邮箱`不同`**的话，这一步需要参考这两个教程操作：
->
-> [ssh-key git多账户配置](https://www.jianshu.com/p/0406cf5701e8)
->
-> [Git配置多个SSH-Key](https://gitee.com/help/articles/4229#article-header0)
+如果GitHub和Coding的注册邮箱 **不同** ，
+
+{{< admonition type=tip title="这一步请参考👉" open=false >}}
+[ssh-key git多账户配置](https://www.jianshu.com/p/0406cf5701e8)
+
+[Git配置多个SSH-Key](https://gitee.com/help/articles/4229#article-header0)
+{{< /admonition >}}
 
 Coding新增SSH的步骤和GitHub差不多
 
@@ -232,11 +238,13 @@ your_name，你好，你已经通过 SSH 协议认证 Coding.net 服务，这是
 
 1. 新建一个仓库，仓库名称任意。
 
-> GitHub可以为任意仓库开启GitHub Pages，只是URL有区别。
->
-> 仓库名称若是 `username.github.io` ，URL就是 http://username.github.io ;
->
-> 仓库名称若是其他，比如 `blog` ，URL就是 http://username.github.io/blog 
+{{< admonition type=info title="注意" open=true >}}
+GitHub上任意公开仓库都可使用GitHub Pages，只是URL有区别。
+
+仓库名称若是 `username.github.io` ，URL就是 http://username.github.io ;
+
+仓库名称若是其他，比如 `blog` ，URL就是 http://username.github.io/blog 
+{{< /admonition >}}
 
 2. 选择“通过README文件初始化仓库”，GitHub会为此仓库开启GitHub Pages，如下图所示，提示用户“你的站点已经发布”，点进去会显示一个网页，就是刚才的README文件。
 
@@ -246,31 +254,37 @@ your_name，你好，你已经通过 SSH 协议认证 Coding.net 服务，这是
 
 ![](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/GitHubPages.png)
 
-> 创建Github仓库时，如果不手动设置分支，博客会默认推送到`master`或`main`分支。
->
-> 当然可以建立几个分支，一个用来发布博客（就是`E:/Blog/public`中的内容），一个用来存储整个博客基础数据（即整个Hexo目录），这样可以多设备同步写博客，只是自己的一些appid就会暴露在源码中了。
->
-> 使用多分支的话，要记得在Hexo目录下的`_config.yml`文件中改变发布仓库的分支。
+创建Github仓库时，如果不手动设置分支，博客会默认推送到`master`或`main`分支。
+
+{{< admonition type=warning title="注意" open=true >}}
+当然可以建立几个分支，一个用来发布博客（就是`E:/Blog/public`中的内容），一个用来存储整个博客基础数据（即整个Hexo目录），这样可以多设备同步写博客，只是自己的一些appid就会暴露在源码中了。
+{{< /admonition >}}
+
+使用多分支的话，要记得在Hexo目录下的`_config.yml`文件中改变发布仓库的分支。
 
 ## 创建Coding Pages
 
-> Coding的静态网站服务偶尔会出现问题，所以看自己需要，没必要非得同时部署博客到GitHub和Coding。
->
-> 其实开启了jsDelivr加速的GitHub Pages足够支撑大部分地区的浏览，要追求更快的速度，用Gitee Pages也行，它在三者之间速度最快，只是免费版本的不能自定义域名罢了。
->
-> Coding工作台界面更新频繁，所以文章有些地方可能对不上实际情况。
+{{< admonition type=note title="啰嗦几句" open=false >}}
+1. Coding的静态网站服务偶尔会出现问题，所以看自己需要，没必要非得同时部署博客到GitHub和Coding。
+
+2. 其实开启了jsDelivr加速的GitHub Pages足够支撑大部分地区的浏览，要追求更快的速度，用Gitee Pages也行，它在三者之间速度最快，只是免费版本的不能自定义域名罢了。
+
+3. Coding工作台界面更新频繁，所以文章有些地方可能对不上实际情况。
+{{< /admonition >}}
 
 1. 首先在Coding工作台新建一个项目
 
 ![](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/11.png)
 
-> 因为Coding工作台的更新，模板会变动，而且不同模板的功能和设置都不同，不过影响不大，功能和设置后续可以自己在项目设置里更改。
+{{< admonition type=info title="注意" open=true >}}
+因为Coding工作台的更新，模板会变动，而且不同模板的功能和设置都不同，不过影响不大，功能和设置后续可以自己在项目设置里更改。
+{{< /admonition >}}
 
 2. 新建的项目地址名称也是随便填。
 
 ![](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/12.png)
 
-> 选中`启用 README.md 文件初始化项目`，如果不，等会儿发布静态网站时还得手动在`代码仓库`功能中选择`快速初始化仓库`。
+选中`启用 README.md 文件初始化项目`，如果不，等会儿发布静态网站时还得手动在`代码仓库`功能中选择`快速初始化仓库`。
 
 3. 建好项目后，确保项目有`持续集成`和`持续部署`这两个功能，如果没有，就在左下角的`项目设置`里，打开这两个功能的开关（所以新建项目时，选择哪个模板不重要）：
 
@@ -487,11 +501,15 @@ githubEmojis:
 
 社交图标（如：`fa-github`）可以在 [Font Awesome](http://www.fontawesome.com.cn/) 中找到，复制图标名称在这里替换即可。
 
-> 不过要注意Font Awesome的版本和主题使用的是否一致，新版本中新增的图标在旧版本中是无法显示的。
+{{< admonition type=info title="注意" open=true >}}
+不过要注意Font Awesome的版本和主题使用的是否一致，新版本中新增的图标在旧版本中是无法显示的。
+{{< /admonition >}}
 
 #### jsDelivr的CDN加速服务（建议）
 
-> 第一次使用此功能，要先配置url，再`hexo clean && hexo g && hexo d`部署到GitHub的仓库（必须是GitHub的仓库）。
+{{< admonition type=info title="注意" open=true >}}
+第一次使用此功能，要先配置url，再`hexo clean && hexo g && hexo d`部署到GitHub的仓库（必须是GitHub的仓库）。
+{{< /admonition >}}
 
 URL配置规则：`https://cdn.jsdelivr.net/gh/GitHub用户名/仓库名`，在matery主题的`_config.yml`文件中最后两行，更改为自己的链接：
 
@@ -500,21 +518,27 @@ jsDelivr:
   url: https://cdn.jsdelivr.net/gh/duduibahuang/duduibahuang.github.io
 ```
 
-> 1. 这样配置后生成的博客推送到GitHub的仓库中，然后jsDelivr访问该仓库，为这些文件提供CDN服务（具体可以到[jsDelivr官网](https://www.jsdelivr.com/)查看详细规则）。
->
-> 2. 只要将上面的URL配置好就算开启了jsDelivr加速服务，别的文件引用链接不用改为jsDelivr要求的格式，会自动更改的。
->
-> 3. 虽然理论上jsDelivr会引用最新版本的文件，但是更新时间有点长，可能会导致网页显示上一版本的内容。
->
-> 4. 配置了此项，就代表着本地调试的时候，网站依然会去GitHub请求资源（原来的资源），本地调试的时候记得将此项配置注释或者删除掉。
+{{< admonition type=note title="解释" open=true >}}
+1. 这样配置后生成的博客推送到GitHub的仓库中，然后jsDelivr访问该仓库，为这些文件提供CDN服务（具体可以到 [jsDelivr官网](https://www.jsdelivr.com/) 查看详细规则）。
 
-- 不启用加速时，博客网站会从GitHub的服务器中加载需要的资源，因为GitHub的服务器在国外，所以网站加载速度慢。
+2. 只要将上面的URL配置好就算开启了jsDelivr加速服务，别的文件引用链接不用改为jsDelivr要求的格式，会自动更改的。
+
+3. 虽然理论上jsDelivr会引用最新版本的文件，但是更新时间有点长，可能会导致网页显示上一版本的内容。
+
+4. 配置了此项，就代表着本地调试的时候，网站依然会去GitHub请求资源（原来的资源），本地调试的时候记得将此项配置注释或者删除掉。
+{{< /admonition >}}
+
+{{< admonition type=example title="不启用加速" open=true >}}
+这时，博客网站会从GitHub的服务器中加载需要的资源，因为GitHub的服务器在国外，所以网站加载速度慢。
+{{< /admonition >}}
 
 不启用加速时，查看网站源码，文件的引用是这样的：
 
 ![](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/17.png)
 
-- 启用加速后，博客网站会从jsDelivr的服务器中加载需要的资源，因为jsDelivr在中国有服务器，所以网站加载速度会有提升。
+{{< admonition type=example title="启用加速" open=true >}}
+这时，博客网站会从jsDelivr的服务器中加载需要的资源，因为jsDelivr在中国有服务器，所以网站加载速度会略有提升。
+{{< /admonition >}}
 
 启用加速时，查看网站源码，文件的引用是这样的：
 
@@ -609,17 +633,19 @@ layout: "contact"
 ---
 ```
 
-> 本留言板功能依赖于第三方评论插件，需要启用自己的的评论系统才有效果。评论模块设置在matery目录下的`_config.yml`文件中。
+{{< admonition type=info title="注意" open=true >}}
+本留言板功能依赖于第三方评论插件，需要启用自己的的评论系统才有效果。评论模块设置在matery目录下的`_config.yml`文件中。
+{{< /admonition >}}
 
 #### 新增评论插件
 
-评论插件的选择可以看云游君的这篇[第三方评论系统之我见](https://www.yunyoujun.cn/share/third-party-comment-system/)。
+评论插件的选择可以看云游君的这篇 [第三方评论系统之我见](https://www.yunyoujun.cn/share/third-party-comment-system/) 。
 
-首先来到[Valine官网](https://www.leancloud.cn/)，创建新应用，之后在应用的设置里复制AppId 和 AppKey。
+首先来到 [Valine官网](https://www.leancloud.cn/)，创建新应用，之后在应用的设置里复制 `AppId` 和 `AppKey` 。
 
 ![](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/19.png)
 
-在matery目录下的`_config.yml`文件中，填写刚刚复制的AppId 和 AppKey。
+在matery目录下的 `_config.yml` 文件中，填写刚刚复制的AppId 和 AppKey。
 
 ```yaml
 # Valine 评论模块的配置，默认为不激活，如要使用，就请激活该配置项，并设置 appId 和 appKey.
@@ -643,30 +669,21 @@ valine: /libs/valine/Valine.min.js
 #若想保持最新版，请替换为https://unpkg.com/valine/dist/Valine.min.js，默认为/libs/valine/Valine.min.js
 ```
 
-> 然而如果使用https://unpkg.com/valine/dist/Valine.min.js 这个链接，同时jsDelivr的CDN加速服务处于启用状态，就会导致Valine加载失败（具体可以看加载失败的网页源代码，会发现引用Valine插件的地址被jsDelivr变成了错误的地址）。
->
-> 解决方案是，手动下载最新版Valine.min.js覆盖的本地`/themes/matery/source/libs/valine/Valine.min.js`
+{{< admonition type=failure title="然而" open=true >}}
+然而如果使用 https://unpkg.com/valine/dist/Valine.min.js 这个链接，同时jsDelivr的CDN加速服务处于启用状态，就会导致Valine加载失败（具体可以看加载失败的网页源代码，会发现引用Valine插件的地址被jsDelivr变成了错误的地址）。
+{{< /admonition >}}
+
+{{< admonition type=success title="解决方案" open=true >}}
+可以手动下载最新版Valine.min.js覆盖的本地`/themes/matery/source/libs/valine/Valine.min.js`，然后调用本地链接。
+{{< /admonition >}}
 
 Valine的留言管理是通过操作数据库完成的：
 
 ![](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/20.png)
 
-> Valine目前使用的是 [Gravatar](http://cn.gravatar.com/) 作为评论列表头像。请自行登录或注册 [Gravatar](http://cn.gravatar.com/)，然后修改自己的头像。
->
-> 评论的时候，留下在 [Gravatar](http://cn.gravatar.com/) 注册时所使用的邮箱即可。
->
-> 目前非自定义头像有以下8种默认值可选:
->
-> |    参数值    |                           表现形式                           | 备注                             |
-> | :----------: | :----------------------------------------------------------: | :------------------------------- |
-> | 空字符串`''` | ![Gravatar官方图形](https://gravatar.loli.net/avatar/d41d8cd98f00b204e9800998ecf8427e?s=40) | Gravatar官方图形                 |
-> |     `mp`     | ![神秘人(一个灰白头像)](https://gravatar.loli.net/avatar/d41d8cd98f00b204e9800998ecf8427e?s=40&d=mp) | 神秘人(一个灰白头像)             |
-> | `identicon`  | ![抽象几何图形](https://gravatar.loli.net/avatar/d41d8cd98f00b204e9800998ecf8427e?s=40&d=identicon) | 抽象几何图形                     |
-> | `monsterid`  | ![小怪物](https://gravatar.loli.net/avatar/d41d8cd98f00b204e9800998ecf8427e?s=40&d=monsterid) | 小怪物                           |
-> |  `wavatar`   | ![用不同面孔和背景组合生成的头像](https://gravatar.loli.net/avatar/d41d8cd98f00b204e9800998ecf8427e?s=40&d=wavatar) | 用不同面孔和背景组合生成的头像   |
-> |   `retro`    | ![八位像素复古头像](https://gravatar.loli.net/avatar/d41d8cd98f00b204e9800998ecf8427e?s=40&d=retro) | 八位像素复古头像                 |
-> |  `robohash`  | ![机器人](https://gravatar.loli.net/avatar/d41d8cd98f00b204e9800998ecf8427e?s=40&d=robohash) | 一种具有不同颜色、面部等的机器人 |
-> |    `hide`    |                                                              | 不显示头像                       |
+Valine目前使用的是 [Gravatar](http://cn.gravatar.com/) 作为评论列表头像。请自行登录或注册 [Gravatar](http://cn.gravatar.com/)，然后修改自己的头像。
+
+评论的时候，留下在 [Gravatar](http://cn.gravatar.com/) 注册时所使用的邮箱即可。
 
 修改matery目录下`_config.yml`文件中的Valine模块即可更改默认非自定义头像：
 
@@ -675,6 +692,21 @@ Valine
 ...
 avatar: 'mp' # Gravatar style : ''/mp/identicon/monsterid/wavatar/retro/robohash/hide
 ```
+
+{{< admonition type=quote title="avatar可选值" open=false >}}
+目前Gravatar的非自定义头像有以下8种默认值可选:
+
+ |    参数值    |                           表现形式                           | 备注                             |
+ | :----------: | :----------------------------------------------------------: | :------------------------------- |
+ | 空字符串`''` | ![Gravatar官方图形](https://gravatar.loli.net/avatar/d41d8cd98f00b204e9800998ecf8427e?s=40) | Gravatar官方图形                 |
+ |     `mp`     | ![神秘人(一个灰白头像)](https://gravatar.loli.net/avatar/d41d8cd98f00b204e9800998ecf8427e?s=40&d=mp) | 神秘人(一个灰白头像)             |
+ | `identicon`  | ![抽象几何图形](https://gravatar.loli.net/avatar/d41d8cd98f00b204e9800998ecf8427e?s=40&d=identicon) | 抽象几何图形                     |
+ | `monsterid`  | ![小怪物](https://gravatar.loli.net/avatar/d41d8cd98f00b204e9800998ecf8427e?s=40&d=monsterid) | 小怪物                           |
+ |  `wavatar`   | ![用不同面孔和背景组合生成的头像](https://gravatar.loli.net/avatar/d41d8cd98f00b204e9800998ecf8427e?s=40&d=wavatar) | 用不同面孔和背景组合生成的头像   |
+ |   `retro`    | ![八位像素复古头像](https://gravatar.loli.net/avatar/d41d8cd98f00b204e9800998ecf8427e?s=40&d=retro) | 八位像素复古头像                 |
+ |  `robohash`  | ![机器人](https://gravatar.loli.net/avatar/d41d8cd98f00b204e9800998ecf8427e?s=40&d=robohash) | 一种具有不同颜色、面部等的机器人 |
+ |    `hide`    |                                                              | 不显示头像                       |
+{{< /admonition >}}
 
 #### 新建友情链接 friends 页
 
@@ -809,6 +841,7 @@ keywords:
 
 这些内容均为非必填的。但至少填写`title`和`date`的值。
 
+{{< admonition type=quote title="解释" open=false >}}
 | 配置选项      | 默认值                                | 描述                                                         |
 | ------------- | ------------------------------------- | ------------------------------------------------------------ |
 | title         |`Markdown`的文件标题                 | 文章标题                                                     |
@@ -826,8 +859,10 @@ keywords:
 | tags          | 无                                    | 文章标签，一篇文章可以多个标签                               |
 | keywords      | 文章标题                              | 文章关键字，SEO 时需要                                       |
 | reprintPolicy | cc_by                                 | 文章转载规则， 可以是 cc_by, cc_by_nd, cc_by_sa, cc_by_nc, cc_by_nc_nd, cc_by_nc_sa, cc0, noreprint 或 pay 中的一个 |
+{{< /admonition >}}
 
-- tags多标签时示例
+{{< admonition type=tip title="多个tags写法👇" open=false >}}
+{{< /admonition >}}
 
 ```yaml
 tags:
@@ -849,21 +884,23 @@ tags:
 
 这时要有一个方便又快速的上传工具，会加快写作的效率。
 
-- 注意不要把隐私图片上传到图床中。
+{{< admonition type=example title="注意" open=true >}}
+- 不要把隐私图片上传到图床中。
 - 以下方法基于 [PicGo2.3.0-beta.0](https://github.com/Molunerfinn/PicGo/releases/tag/v2.3.0-beta.0) 和 [Typora0.9.86(beta)](https://typora.io/#windows) 
 - PicGo默认支持SM.MS图床、腾讯云COS、Github图床、七牛图床、Imgur图床、阿里云OSS、又拍云图床，更多支持可以根据 [PicGo插件](https://github.com/PicGo/Awesome-PicGo) 自行配置，下面我只列举了几个适合新手的。
 - Typora自动上传需要PicGo(app)保持在后台运行。
 - 如果习惯用命令行的话，[PicGo-Core](https://picgo.github.io/PicGo-Core-Doc/) 更舒适。
-
+{{< /admonition >}}
 
 #### 法一
 
 [PicGo+Gitee图床+Typora](https://zhuanlan.zhihu.com/p/102594554)，**稳定**。
 
-> **以下是注意事项**
+{{< admonition type=warning title="引用限制" open=true >}}
+Gitee中超过1MB的文件无法使用外链引用。
+{{< /admonition >}}
 
-1. Gitee中超过1MB的文件无法通过外链获取。
-2. 在Typora中引用Gitee的图片，格式是这样的（PicGo默认自动复制的也是这个格式）：
+在Typora中引用Gitee的图片，格式是这样的（PicGo默认自动复制的也是这个格式）：
 
 ```yaml
 https://gitee.com/用户名/仓库名/raw/master/图片名
@@ -875,11 +912,15 @@ https://gitee.com/用户名/仓库名/raw/master/图片名
 https://gitee.com/用户名/仓库名/blob/master/图片名
 ```
 
-**即`仓库名`与`master`之间的是`raw`而不是`其他字符`**，不然图片显示不出来。
+**即`仓库名`与`master`之间的是`raw`而不是`其他字符`**，不然图片显示不出来。这是两种不同的协议。
 
-3.  如果在Typora中插入中文名的图片上传到**Gitee**，虽然PicGo也能自动上传成功，但是在Typora中显示不出来，解决办法是把Typora的`偏好设置`→`图像`→`插入图片时自动转义图片URL功能`打开。这样以后再插入中文名图片就一切正常了，不过在这之前插入的中文名图片还是不能显示，需要重新插入（自动转义、上传）。
+{{< admonition type=question title="上传成功但显示失败" open=true >}}
+如果在Typora中插入中文名的图片上传到**Gitee**，虽然PicGo也能自动上传成功，但是在Typora中显示不出来。
+{{< /admonition >}}
 
-> 至于PicGo+Coding图床+Typora，我各种操作，无法使用（可能是我菜了）
+{{< admonition type=success title="解决办法" open=true >}}
+把Typora的`偏好设置`→`图像`→`插入图片时自动转义图片URL功能`打开。这样以后再插入中文名图片就一切正常了，不过在这之前插入的中文名图片还是不能显示，需要重新插入（自动转义、上传）。
+{{< /admonition >}}
 
 #### 法二
 
@@ -897,7 +938,10 @@ PicGo+[SM.MS图床](https://sm.ms/)+Typora，**稳定**，普通用户免费空�
 4. PicGo自身的bug。
 5. Typora自身的bug。
 
-> 有人说图片名称里有`+`，也会导致上传失败。我试验了一下，（这个版本，别的版本没试验）可以正常上传，他说的可能是过时的情况了。
+{{< admonition type=note title="其他原因" open=false >}}
+有人说图片名称里有 `+` ，也会导致上传失败。我试验了一下这个版本，可以正常上传，他说的可能是过时版本的情况了。
+
+{{< /admonition >}}
 
 #### 法四
 
@@ -909,7 +953,9 @@ PicGo+[SM.MS图床](https://sm.ms/)+Typora，**稳定**，普通用户免费空�
 
 缺点是图片名称容易搞混。
 
-> 注意：虽然理论上jsDelivr会引用最新版本的文件，但是更新时间有点长，可能会导致网页显示同名称的上一版本图片。
+{{< admonition type=info title="注意" open=true >}}
+注意：虽然理论上jsDelivr会引用最新版本的文件，但是更新时间有点长，可能会导致网页显示同名称的上一版本图片。
+{{< /admonition >}}
 
 ### 发布文章
 
@@ -957,7 +1003,11 @@ hexo cl && hexo g && hexo s
 hexo cl && hexo d
 ```
 
-> 推送成功后，需要稍等几秒，网站才会应用刚刚部署的相关博客或设置，如果多次刷新、清理缓存都未达到效果，就要检查自己的各方面配置了。
+{{< admonition type=question title="部署成功还是失败？" open=true >}}
+推送成功后，需要稍等几秒，网站才会应用刚刚部署的相关博客或设置。
+
+如果多次刷新、清理缓存都未达到效果，就要检查自己的各方面配置了。
+{{< /admonition >}}
 
 ## 自定义域名（可选）
 
@@ -977,17 +1027,23 @@ hexo cl && hexo d
 
 这样，阿里云的国外服务器为境外浏览者解析`shan-ren.cn`指向我的GitHub Pages，阿里云的国内服务器为国内浏览者解析`shan-ren.cn`指向我的Coding Pages，这就实现了分流。
 
-> 有人说，这种情况可以两条记录都使用默认解析线路，阿里云会智能分流。我试了，不怎么稳定。
+{{< admonition type=note title="智能分流不靠谱" open=false >}}
+有人说，这种情况可以两条记录都使用默认解析线路，阿里云会智能分流。我试了，不怎么稳定。
+{{< /admonition >}}
 
 DNS分流解析效果图：
 
 ![](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/23.png)
 
-> 我用的是国外[whatsmydns](https://www.whatsmydns.net/)查询的，用阿里云自己的DNS查询工具查不出来这种效果。
+{{< admonition type=tip title="DNS Check" open=true >}}
+我用的是国外 [whatsmydns](https://www.whatsmydns.net/) 查询的，用阿里云自己的DNS查询工具查不出来这种效果。
+{{< /admonition >}}
 
 因为我还使用了jsDelivr的CDN加速服务，网站具体加载速度依赖jsDelivr的全球节点，不管是GitHub Pages还是Coding Pages，速度差别不大。
 
-> 但是，还是不如部署到Gitee Pages上加载速度快。只不过Gitee Pages免费版本每次在本地部署后，还得在Gitee Pages页面手动更新，而且免费版本不能自定义域名，所以我就没用Gitee Pages。
+{{< admonition type=note title="Gitee更快但是不怎么香" open=false >}}
+虽然Gitee Pages速度很快，但是Gitee Pages免费版本每次在本地部署后，还得在Gitee Pages页面手动更新，而且免费版本不能自定义域名，所以我就没用Gitee Pages。
+{{< /admonition >}}
 
 ### 域名绑定
 
@@ -995,13 +1051,17 @@ DNS分流解析效果图：
 
 #### 法一
 
-> 前提是像我一样，把一个域名同时解析为两个域名（GitHub Pages和Coding Pages的域名）。
+{{< admonition type=note title="前提" open=true >}}
+前提是像我一样，把一个域名同时解析为两个域名（GitHub Pages和Coding Pages的域名）。
+{{< /admonition >}}
 
 在本地Hexo目录下的`source`目录里新建名为`CNAME`的文件（没有后缀名），输入自己的解析的域名，比如我输入`shan-ren.cn`，这样`hexo d`之后，会把CNAME文件推送到我的GitHub和Coding的仓库，这样网站上就有CNAME文件来对应服务商的域名解析，输入`shan-ren.cn`就会跳转到相应的网站。
 
 #### 法二
 
-> 前提是解析了两个不同的域名分别指向GitHub Pages和Coding Pages。
+{{< admonition type=note title="前提" open=true >}}
+前提是解析了两个不同的域名分别指向GitHub Pages和Coding Pages。
+{{< /admonition >}}
 
 这样就不能用法一了，因为一个CNAME文件放到两个网站上，两个网站都想对应解析成CNAME文件里的那个域名，这就产生了冲突导致解析失败。可以在每次`hexo d`部署之后，手动到网站上设置。
 

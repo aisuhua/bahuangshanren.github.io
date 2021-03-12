@@ -11,9 +11,9 @@
 
 ## 解决方法
 
-### 有效的方法
-
-> 思路是修改含有 `VMware NAT Service` 的代码，使这个关闭VMware NAT Service的功能失去作用目标。
+{{< admonition type=success title="有效的方法" open=true >}}
+替换代表 `VMware NAT Service` 的16进制编码，使关闭VMware NAT Service的功能失去作用目标。
+{{< /admonition >}}
 
 1. 在任务管理器中先结束 **RJSuService** ，然后再结束 **锐捷认证客户端** 。
 
@@ -27,16 +27,16 @@
 
 <p align="center"><img src="https://gitee.com/BahuangShanren/picture/raw/master/article_2020-09-09/%E6%9B%BF%E6%8D%A2%E4%B8%BAAAware%20NAT%20Service.png" style="zoom:80%;" /></p>
 
-
-
-> 注意不要改变字符长度，比如改成 `AAA Service` 的16进制编码 `41 41 41 20 53 65 72 76 69 63 65` ，这样改动后，此处16进制编码长度也会发生变化导致错误，启动不了锐捷客户端。
+{{< admonition type=note title="注意" open=true >}}
+不要改变字符长度，比如改成 `AAA Service` 的16进制编码 `41 41 41 20 53 65 72 76 69 63 65` ，这样改动后，此处16进制编码长度也会发生变化导致错误，启动不了锐捷客户端。
+{{< /admonition >}}
 
 这样改好了以后，如果没有失误导致的意外，就会发现系统服务中的VMware NAT Service不会被停止运行了。
 
-### 网络上其他失效的方法
-
+{{< admonition type=failure title="网上其他失效的方法" open=true >}}
 1. 更改8021x.exe对于VMware NAT Service的检测时间
 2. 直接搜索 `VMware NAT Service` ，替换为其他字符。
+{{< /admonition >}}
 
 ## 虚拟机NAT模式联网
 
