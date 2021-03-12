@@ -19,11 +19,11 @@
 
 - 进行到第2步的时候，确保选中Git Bash here（默认选中），这样就可以在资源管理器的右键菜单中随时使用Git Bash here打开Git Bash。
 
-<center><img src= "https://cdn.jsdelivr.net/gh/BahuangShanren/picture@master/article_2020-05-21/2.png" /></center>
+<center><img src= "https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/2.png" /></center>
 
 - 进行到第6步的时候，确保选中第二项（默认选中），这样就可以在Git Bash、cmd、Power Shell和其他第三方软件中（比如VS Code中的Terminal里）使用Git。
 
-<center><img src= "https://cdn.jsdelivr.net/gh/BahuangShanren/picture@master/article_2020-05-21/3.png" /></center>
+<center><img src= "https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/3.png" /></center>
 
 安装完成后在**cmd**中输入`git --version`，若出现版本号，即安装成功。
 
@@ -117,7 +117,7 @@ npm i hexo-deployer-git
 
 输入`hexo g`生成静态网页，然后输入`hexo s`打开本地服务器，用浏览器打开http://localhost:4000/ ，可以看到Hexo默认的博客网页：
 
-![](https://cdn.jsdelivr.net/gh/BahuangShanren/picture@master/article_2020-05-21/4.png)
+![](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/4.png)
 
 按`ctrl+c`关闭本地服务器。
 
@@ -156,9 +156,9 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 
 在Github个人设置中点击`SSH and GPG keys`，点击`New SSH Key`新建SSH密钥：
 
-![](https://cdn.jsdelivr.net/gh/BahuangShanren/picture@master/article_2020-05-21/5.png)
+![](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/5.png)
 
-![](https://cdn.jsdelivr.net/gh/BahuangShanren/picture@master/article_2020-05-21/6.png)
+![](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/6.png)
 
 - 在Git Bash输入`cat ~/.ssh/id_rsa.pub` 查看刚刚生成的个人公钥。复制输出的内容，粘贴到上图`key`框中,`Title`任意。
 
@@ -196,9 +196,9 @@ Hi your_name! You've successfully authenticated, but GitHub does not provide she
 
 Coding新增SSH的步骤和GitHub差不多
 
-![](https://cdn.jsdelivr.net/gh/BahuangShanren/picture@master/article_2020-05-21/7.png)
+![](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/7.png)
 
-<p align="center"><img src="https://cdn.jsdelivr.net/gh/BahuangShanren/picture@master/article_2020-05-21/8.png" style="zoom: 50%;" /></p>
+<p align="center"><img src="https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/8.png" style="zoom: 50%;" /></p>
 
 因为我的**GitHub和Coding的注册邮箱相同**，所以上面生成的那个SSH也可以用于Coding。
 
@@ -240,11 +240,11 @@ your_name，你好，你已经通过 SSH 协议认证 Coding.net 服务，这是
 
 2. 选择“通过README文件初始化仓库”，GitHub会为此仓库开启GitHub Pages，如下图所示，提示用户“你的站点已经发布”，点进去会显示一个网页，就是刚才的README文件。
 
-![](https://cdn.jsdelivr.net/gh/BahuangShanren/picture@master/article_2020-05-21/9.png)
+![](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/9.png)
 
 3. 或者手动开启GitHub Pages，如下图，需要选择 `source` ，比如选择 `master` 然后点击 `save` 
 
-![](https://cdn.jsdelivr.net/gh/BahuangShanren/picture@master/article_2020-05-21/GitHubPages.png)
+![](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/GitHubPages.png)
 
 > 创建Github仓库时，如果不手动设置分支，博客会默认推送到`master`或`main`分支。
 >
@@ -262,23 +262,23 @@ your_name，你好，你已经通过 SSH 协议认证 Coding.net 服务，这是
 
 1. 首先在Coding工作台新建一个项目
 
-![](https://cdn.jsdelivr.net/gh/BahuangShanren/picture@master/article_2020-05-21/11.png)
+![](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/11.png)
 
 > 因为Coding工作台的更新，模板会变动，而且不同模板的功能和设置都不同，不过影响不大，功能和设置后续可以自己在项目设置里更改。
 
 2. 新建的项目地址名称也是随便填。
 
-![](https://cdn.jsdelivr.net/gh/BahuangShanren/picture@master/article_2020-05-21/12.png)
+![](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/12.png)
 
 > 选中`启用 README.md 文件初始化项目`，如果不，等会儿发布静态网站时还得手动在`代码仓库`功能中选择`快速初始化仓库`。
 
 3. 建好项目后，确保项目有`持续集成`和`持续部署`这两个功能，如果没有，就在左下角的`项目设置`里，打开这两个功能的开关（所以新建项目时，选择哪个模板不重要）：
 
-![](https://cdn.jsdelivr.net/gh/BahuangShanren/picture@master/article_2020-05-21/13.png)
+![](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/13.png)
 
 4. 然后回到项目控制台，选择`持续部署`里的`静态网站`，点击`立即发布静态网站`，前提是已经实名认证过账号：
 
-![](https://cdn.jsdelivr.net/gh/BahuangShanren/picture@master/article_2020-05-21/14.png)
+![](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/14.png)
 
 5. Coding会生成一个随机的网址作为此静态网站的地址。当然现在什么内容也没有，需要后续部署。
 
@@ -352,9 +352,9 @@ deploy:
 
 将`repository`修改为自己的GitHub仓库和Coding仓库的SSH地址：
 
-![](https://cdn.jsdelivr.net/gh/BahuangShanren/picture@master/article_2020-05-21/15.png)
+![](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/15.png)
 
-![](https://cdn.jsdelivr.net/gh/BahuangShanren/picture@master/article_2020-05-21/16.png)
+![](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/16.png)
 
 这样部署博客时就会同时部署到这两个仓库。
 
@@ -512,13 +512,13 @@ jsDelivr:
 
 不启用加速时，查看网站源码，文件的引用是这样的：
 
-![](https://cdn.jsdelivr.net/gh/BahuangShanren/picture@master/article_2020-05-21/17.png)
+![](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/17.png)
 
 - 启用加速后，博客网站会从jsDelivr的服务器中加载需要的资源，因为jsDelivr在中国有服务器，所以网站加载速度会有提升。
 
 启用加速时，查看网站源码，文件的引用是这样的：
 
-![](https://cdn.jsdelivr.net/gh/BahuangShanren/picture@master/article_2020-05-21/18.png)
+![](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/18.png)
 
 #### 百度统计（可选）
 
@@ -532,7 +532,7 @@ baiduAnalytics:
 
 在 [百度统计](https://tongji.baidu.com/) 中新建网站，完成后会让你复制代码粘贴到自己的文件中，在`hm.src = "https://hm.baidu.com/hm.js?`之后的字符串就是你的ID：
 
-![](https://cdn.jsdelivr.net/gh/BahuangShanren/picture@master/article_2020-05-21/BaiduAnalytics.png)
+![](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/BaiduAnalytics.png)
 
 其实打开`matery/layout/_partial/baidu-analytics.ejs`就会发现，百度统计让你复制的代码已经在这里了，只是没有ID，意思就是matery主题的作者已经把这个功能集成了。
 
@@ -548,7 +548,7 @@ googleAnalytics:
 
 在 [谷歌统计](https://analytics.google.com) 中添加自己的网站，找到自己的跟踪ID：
 
-![](https://cdn.jsdelivr.net/gh/BahuangShanren/picture@master/article_2020-05-21/GoogleAnalytics.png)
+![](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/GoogleAnalytics.png)
 
 ### 新增博客功能页面（可选）
 
@@ -617,7 +617,7 @@ layout: "contact"
 
 首先来到[Valine官网](https://www.leancloud.cn/)，创建新应用，之后在应用的设置里复制AppId 和 AppKey。
 
-![](https://cdn.jsdelivr.net/gh/BahuangShanren/picture@master/article_2020-05-21/19.png)
+![](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/19.png)
 
 在matery目录下的`_config.yml`文件中，填写刚刚复制的AppId 和 AppKey。
 
@@ -649,7 +649,7 @@ valine: /libs/valine/Valine.min.js
 
 Valine的留言管理是通过操作数据库完成的：
 
-![](https://cdn.jsdelivr.net/gh/BahuangShanren/picture@master/article_2020-05-21/20.png)
+![](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/20.png)
 
 > Valine目前使用的是 [Gravatar](http://cn.gravatar.com/) 作为评论列表头像。请自行登录或注册 [Gravatar](http://cn.gravatar.com/)，然后修改自己的头像。
 >
@@ -659,13 +659,13 @@ Valine的留言管理是通过操作数据库完成的：
 >
 > |    参数值    |                           表现形式                           | 备注                             |
 > | :----------: | :----------------------------------------------------------: | :------------------------------- |
-> | 空字符串`''` | ![Gravatar官方图形](https://gravatar.loli.net/avatar/d41d8cd98f00b204e9800998ecf8427e?s=40) | Gravatar官方图形                 |
-> |     `mp`     | ![神秘人(一个灰白头像)](https://gravatar.loli.net/avatar/d41d8cd98f00b204e9800998ecf8427e?s=40&d=mp) | 神秘人(一个灰白头像)             |
-> | `identicon`  | ![抽象几何图形](https://gravatar.loli.net/avatar/d41d8cd98f00b204e9800998ecf8427e?s=40&d=identicon) | 抽象几何图形                     |
-> | `monsterid`  | ![小怪物](https://gravatar.loli.net/avatar/d41d8cd98f00b204e9800998ecf8427e?s=40&d=monsterid) | 小怪物                           |
-> |  `wavatar`   | ![用不同面孔和背景组合生成的头像](https://gravatar.loli.net/avatar/d41d8cd98f00b204e9800998ecf8427e?s=40&d=wavatar) | 用不同面孔和背景组合生成的头像   |
-> |   `retro`    | ![八位像素复古头像](https://gravatar.loli.net/avatar/d41d8cd98f00b204e9800998ecf8427e?s=40&d=retro) | 八位像素复古头像                 |
-> |  `robohash`  | ![机器人](https://gravatar.loli.net/avatar/d41d8cd98f00b204e9800998ecf8427e?s=40&d=robohash) | 一种具有不同颜色、面部等的机器人 |
+> | 空字符串`''` | ![Gravatar官方图形](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/gravatar.jpg) | Gravatar官方图形                 |
+> |     `mp`     | ![神秘人(一个灰白头像)](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/mp.png) | 神秘人(一个灰白头像)             |
+> | `identicon`  | ![抽象几何图形](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/identicon.png) | 抽象几何图形                     |
+> | `monsterid`  | ![小怪物](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/monsterid.png) | 小怪物                           |
+> |  `wavatar`   | ![用不同面孔和背景组合生成的头像](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/wavatar.png) | 用不同面孔和背景组合生成的头像   |
+> |   `retro`    | ![八位像素复古头像](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/retro.png) | 八位像素复古头像                 |
+> |  `robohash`  | ![机器人](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/robohash.png) | 一种具有不同颜色、面部等的机器人 |
 > |    `hide`    |                                                              | 不显示头像                       |
 
 修改matery目录下`_config.yml`文件中的Valine模块即可更改默认非自定义头像：
@@ -773,7 +773,7 @@ sharejs:
 
 首先到官网创建新应用，之后复制应用的pubid：
 
-![](https://cdn.jsdelivr.net/gh/BahuangShanren/picture@master/article_2020-05-21/21.png)
+![](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/21.png)
 
 ```yaml
 addthis:
@@ -973,7 +973,7 @@ hexo cl && hexo d
 
 注册之后解析域名，可以参考下图这样添加：
 
-![](https://cdn.jsdelivr.net/gh/BahuangShanren/picture@master/article_2020-05-21/22.png)
+![](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/22.png)
 
 这样，阿里云的国外服务器为境外浏览者解析`shan-ren.cn`指向我的GitHub Pages，阿里云的国内服务器为国内浏览者解析`shan-ren.cn`指向我的Coding Pages，这就实现了分流。
 
@@ -981,7 +981,7 @@ hexo cl && hexo d
 
 DNS分流解析效果图：
 
-![](https://cdn.jsdelivr.net/gh/BahuangShanren/picture@master/article_2020-05-21/23.png)
+![](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/23.png)
 
 > 我用的是国外[whatsmydns](https://www.whatsmydns.net/)查询的，用阿里云自己的DNS查询工具查不出来这种效果。
 
@@ -1007,15 +1007,15 @@ DNS分流解析效果图：
 
 1. 在GitHub Pages仓库的设置里参考下图设置：
 
-![](https://cdn.jsdelivr.net/gh/BahuangShanren/picture@master/article_2020-05-21/24.png)
+![](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/24.png)
 
 2. 在Coding Pages仓库的设置里参考下图设置：
 
-![](https://cdn.jsdelivr.net/gh/BahuangShanren/picture@master/article_2020-05-21/25.png)
+![](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/25.png)
 
 要记得重新点击“立即部署”按钮：
 
-![](https://cdn.jsdelivr.net/gh/BahuangShanren/picture@master/article_2020-05-21/26.png)
+![](https://gitee.com/BahuangShanren/picture/raw/master/article_2020-05-21/26.png)
 
 这样就不冲突了。只是每次都得手动设置，可能还有更好的解决方案，但我用不上，就没去琢磨。
 
