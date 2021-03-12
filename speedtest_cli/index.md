@@ -3,7 +3,8 @@
 
 ## 下载地址
 
-[Speedtest_Cli](https://www.speedtest.net/zh-Hans/apps/cli) 
+来自 speedtest.net 的 [Speedtest_Cli](https://www.speedtest.net/zh-Hans/apps/cli) 
+> 不是 speedtest.cn 
 
 ## 简介
 ```
