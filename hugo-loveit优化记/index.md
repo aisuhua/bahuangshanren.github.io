@@ -202,11 +202,13 @@ type=quote
 
 参考 [actions-hugo](https://github.com/peaceiris/actions-hugo) 和 [actions-gh-pages](https://github.com/peaceiris/actions-gh-pages) 
 
-1. 创建一个个人 [token](https://github.com/settings/tokens) ，名字可以叫做 `blog` 。
-2. 此token的访问范围选择 `repo` 和 `workflow` 。
-3. 生成token，记住它的值。
-4. 到博客源码仓库的 `Settings` → `Secrets` 中新建一个 `Actions secrets` ,名字也叫做 `blog` ,Value填入上一步中的个人token的值。
-5. 在博客根目录下创建 `.github\workflows\gh-pages.yml` 文件，写入以下代码：
+1. 创建一个私有仓库用来存放博客源码
+2. 创建一个公有仓库用来发布博客。
+3. 创建一个个人 [token](https://github.com/settings/tokens) ，名字可以叫做 `blog` 。
+4. 此token的访问范围选择 `repo` 和 `workflow` 。
+5. 生成token，记住它的值。
+6. 到博客源码仓库的 `Settings` → `Secrets` 中新建一个 `Actions secrets` ,名字也叫做 `blog` ,Value填入上一步中的个人token的值。
+7. 在博客根目录下创建 `.github\workflows\gh-pages.yml` 文件，写入以下代码：
 
 ```yaml
 name: Deploy Blog #名字随便起
@@ -235,7 +237,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3.7.3
         with:
           personal_token: ${{ secrets.blog }} 
-          external_repository: # 用来发布博客的仓库
+          external_repository: # 用来发布博客的公有仓库
           publish_branch: master
           publish_dir: ./public
           cname: # 填写你的域名
