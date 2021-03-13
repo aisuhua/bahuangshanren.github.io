@@ -72,3 +72,156 @@ type=example
 {{< admonition type=quote title="引用" open=true >}}
 type=quote
 {{< /admonition >}}
+
+## keywords不生效
+
+参考自 [雨临Lewis](https://lewky.cn/posts/hugo-4.html/#%E7%BD%91%E7%AB%99%E9%85%8D%E7%BD%AE%E4%BA%86keywords%E6%B2%A1%E6%9C%89%E7%94%9F%E6%95%88) 的这篇文章。
+
+{{< admonition type=note title="前提配置" open=true >}}
+在站点配置文件 `config.toml` 中填好网站关键词：
+
+```toml
+  # 网站关键词
+  keywords = "keyword1,keyword2"
+```
+{{< /admonition >}}
+
+虽然已经设置了 `keywords` ，但是F12查看网站源码后发现缺少 `keywords` 这个 `meta` 标签，而且在 [站长工具](https://seo.chinaz.com) 里查询站点时发现页面TDK信息里的关键词 `KeyWords` 为空。
+
+{{< admonition type=bug title="debug" open=true >}}
+检查模板文件后发现是LoveIt主题没有引入该标签，需要修改模板。
+{{< /admonition >}}
+
+### 解决方法
+
+将 `blog\themes\LoveIt\layouts\partials\head\meta.html` 复制到 `blog\layouts\partials\head\meta.html` ，打开该文件并在
+
+```html
+<meta name="Description" content="{{ $params.description | default .Site.Params.description }}">
+```
+的上方添加如下代码：
+
+```html
+<meta name="keywords" content="{{ $params.keywords | default .Site.Params.keywords }}">
+```
+
+### 参考链接
+
+更多踩坑记录请参考雨临Lewis的 [这篇文章](https://lewky.cn/posts/hugo-4.html/) 。
+
+更多优化美化指南请参考雨临Lewis的 [这篇文章](https://lewky.cn/posts/hugo-3.html/) 。
+
+{{< admonition type=info title="注意" open=true >}}
+上面雨临Lewis的两篇文章中有许多地方对于 [LoveIt_v0.2.10](https://github.com/dillonzq/LoveIt/releases/tag/v0.2.10) 是不必要的。
+{{< /admonition >}}
+
+## 换用twikoo评论系统
+
+最开始用的评论系统是 [valine](https://valine.js.org/) ，后来换用了带有后台的 [waline](https://waline.js.org/) ，再之后发现 [twikoo](https://twikoo.js.org/) 后台配置很方便，界面也很好看，于是决定换一波。
+
+但有个问题，twikoo只适配了Hexo的部分主题，而没有适配Hugo主题。
+
+### 解决方法
+
+可以修改评论系统模板文件 `blog\themes\LoveIt\layouts\partials\comment.html` 来手动添加对twikoo的支持，在 `<div id="comments"></div>` 中添加以下代码：
+
+```html
+        {{- /* twikoo Comment System */ -}}
+        {{- $twikoo := $comment.twikoo}}
+        {{- if $twikoo.enable -}}
+        <div id="tcomment"></div>
+        <script src="https://cdn.jsdelivr.net/npm/twikoo@1.3.0/dist/twikoo.all.min.js"></script>
+        <script>
+        twikoo.init({
+          envId: '',
+          // 此处填写您的环境id
+          el: '#tcomment',
+          // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，如果您的环境地域不是上海，需传此参数
+          // path: 'window.location.pathname', // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
+        })
+        </script>
+        {{- end }}
+```
+
+然后在博客配置文件 `blog\config.toml` 中的
+
+```toml
+# 评论系统设置
+[params.page.comment]
+    enable = true
+```
+
+下面添加
+
+```toml
+# twikoo评论系统
+[params.page.comment.twikoo]
+    enable = true
+```
+
+{{< admonition type=tip title="更多twikoo配置" open=true >}}
+请到twikoo [官网](https://twikoo.js.org/) 查看。
+{{< /admonition >}}
+
+## 部署方式
+
+### 几种选择
+
+1. GitHub Actions
+2. [CircleCI](https://circleci.com/) 、[Netlify](https://www.netlify.com/) 、[Travis CI](https://www.travis-ci.com/) 、[Vercel](https://vercel.com/) 等第三方服务
+
+最后还是选了GitHub Actions，因为不用到另外的网站上再配置一通，使用 [actions-hugo](https://github.com/peaceiris/actions-hugo) 和 [actions-gh-pages](https://github.com/peaceiris/actions-gh-pages) 这两个Action，每次写完博客，push一下，GitHub Actions就会自动构建和部署博客。
+
+### GitHub Actions自动部署Hugo
+
+参考 [actions-hugo](https://github.com/peaceiris/actions-hugo) 和 [actions-gh-pages](https://github.com/peaceiris/actions-gh-pages) 
+
+1. 创建一个个人 [token](https://github.com/settings/tokens) ，名字可以叫做 `blog` 。
+2. 此token的访问范围选择 `repo` 和 `workflow` 。
+3. 生成token，记住它的值。
+4. 到博客源码仓库的 `Settings` → `Secrets` 中新建一个 `Actions secrets` ,名字也叫做 `blog` ,Value填入上一步中的个人token的值。
+5. 在博客根目录下创建 `.github\workflows\gh-pages.yml` 文件，写入以下代码：
+
+```yaml
+name: Deploy Blog #名字随便起
+
+on:
+  push:
+    branches:
+      - master # 源码所在分支
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2.4.13
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Build
+        run: hugo --gc --minify
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3.7.3
+        with:
+          personal_token: ${{ secrets.blog }} 
+          external_repository: # 用来发布博客的仓库
+          publish_branch: master
+          publish_dir: ./public
+          cname: # 填写你的域名
+          commit_message: ${{ github.event.head_commit.message }}
+
+```
+
+{{< admonition type=success title="双仓库模式" open=true >}}
+本博客即采用上面的 `gh-pages.yml` ，使用私有仓库存放博客源码，将Hugo构建好的 `public` 目录推送到公有仓库来发布。
+{{< /admonition >}}
+
+{{< admonition type=warning title="双分支模式" open=true >}}
+也可以在一个公有仓库中创建两个分支，一个放源码，一个用来发布，但是那样会暴露源码中一些服务的ID和Key。
+{{< /admonition >}}
+

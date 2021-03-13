@@ -106,8 +106,7 @@ prime-select query
 
 `sudo` 失败，提示“用户不在sudoers文件中此事将被报告”。
 
-{{< admonition type=success title="解决方法👇" open=false >}}
-{{< /admonition >}}
+{{< admonition type=success title="解决方法" open=true >}}
 
 1. `su root` ，以root身份运行 `vi /etc/sudoers`，或者 `nano /etc/sudoers`，总之打开 `sudoers` 这个文件并编辑它。
 
@@ -125,6 +124,7 @@ prime-select query
    ```
 
 3. 保存退出即可。
+{{< /admonition >}}
 
 ### 无法调节音量
 
@@ -132,8 +132,7 @@ prime-select query
 
 在有声音输出的前提下，无法调节音量。
 
-{{< admonition type=success title="解决方法👇" open=false >}}
-{{< /admonition >}}
+{{< admonition type=success title="解决方法" open=true >}}
 
 1. 使用 `alsamixer` 命令直接调节。
 
@@ -142,6 +141,8 @@ prime-select query
    ```shell
    sudo apt-get install kdemultimedia kmix
    ```
+
+{{< /admonition >}}
 
 {{< admonition type=note title="额外参考" open=false >}}
 https://wiki.debian.org/Sound
@@ -205,13 +206,14 @@ dpkg：错误：在PATH中找不到2个预期程序或它们不可执行。
 
 **场景**：一般是root身份登录系统，打不开某些软件（google chrome），而普通用户可以打开；然而有时，某些软件普通用户也打不开（PicGo的AppImage）。以下解决方法适用于上述两种情况
 
-{{< admonition type=success title="解决方法👇" open=false >}}
-{{< /admonition >}}
+{{< admonition type=success title="解决方法" open=true >}}
 
 以google chrome为例：
 
   1. 找到`usr/share/applications`中的google chrome启动文件或图标，右击用文本编辑器打开
   2. 在`Exec=typora %U`后面添加` --no-sandbox`（注意`--`的前面有个空格）
+
+{{< /admonition >}}
 
 ### 双系统时间不一致
 
@@ -328,7 +330,7 @@ sudo pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY dolphin
 ### Grub
 
 {{< admonition type=warning title="注意" open=true >}}
-用PS编辑过的图片可能嵌入了grub不支持的一些东西，具体是什么我也没排查出来，如果强行应用就会得到grub的报错。
+用PS编辑过的图片可能嵌入了grub不支持的一些数据，具体是什么也没排查出来，如果强行应用就会得到grub的报错。
 {{< /admonition >}}
 
 1. [grub主题配置](https://blog.csdn.net/qq_27525611/article/details/104075692)  、[grub参数介绍](https://blog.csdn.net/xinlan3618/article/details/78963513)
