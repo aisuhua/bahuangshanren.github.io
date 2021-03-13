@@ -1,6 +1,32 @@
 # Hugo+loveit优化记
 
 
+## 本地调试时加载评论系统
+
+使用 `hugo server` ,会得到终端的提示：
+
+```shell
+Current environment is "development". The "comment system", "CDN" and "fingerprint" will be disabled.
+当前运行环境是 "development". "评论系统", "CDN" 和 "fingerprint" 不会启用.
+```
+
+{{< admonition type=success title="解决方法" open=true >}}
+使用 `hugo server -e production` 命令即可运行生产环境进行调试，就能加载评论系统了。
+{{< /admonition >}}
+
+## Console报错找不到 `site.webmanifest`
+
+{{< admonition type=warning title="一定要处理" open=true >}}
+如果不处理的话，会影响网站的打开速度。
+{{< /admonition >}}
+
+参考LoveIt主题作者的 [方法](https://hugoloveit.com/zh-cn/theme-documentation-basics/#32-%E7%BD%91%E7%AB%99%E5%9B%BE%E6%A0%87-%E6%B5%8F%E8%A7%88%E5%99%A8%E9%85%8D%E7%BD%AE-%E7%BD%91%E7%AB%99%E6%B8%85%E5%8D%95) 
+,到 [Favicon Generator](https://realfavicongenerator.net/) 处理自己的网站图标，最后会下载一个压缩包，包括生成的图标和 `browserconfig.xml` 、 `site.webmanifest` 等文件，将这些文件放到 `blog\themes\LoveIt\static` 中即可。
+
+{{< admonition type=note title="顺嘴一提" open=true >}}
+`blog\themes\LoveIt\static` 这个目录里的文件，最后会出现在网站根目录中。
+{{< /admonition >}}
+
 ## LoveIt扩展Shortcodes
 
 更多扩展Shortcodes的应用方法请查看LoveIt主题作者写的 [使用说明](https://hugoloveit.com/zh-cn/theme-documentation-extended-shortcodes/) 。
