@@ -1,4 +1,4 @@
-# Hugo版WebStack导航站目录文件简介
+# Hugo版WebStack目录文件简介
 
 
 {{< admonition type=example title="八荒山人导航" open=true >}}
