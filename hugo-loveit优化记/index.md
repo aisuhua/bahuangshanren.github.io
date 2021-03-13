@@ -202,7 +202,7 @@ type=quote
 
 参考 [actions-hugo](https://github.com/peaceiris/actions-hugo) 和 [actions-gh-pages](https://github.com/peaceiris/actions-gh-pages) 
 
-1. 创建一个私有仓库用来存放博客源码
+1. 创建一个私有仓库用来存放博客源码。
 2. 创建一个公有仓库用来发布博客。
 3. 创建一个个人 [token](https://github.com/settings/tokens) ，名字可以叫做 `blog` 。
 4. 此token的访问范围选择 `repo` 和 `workflow` 。
