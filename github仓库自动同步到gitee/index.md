@@ -76,9 +76,8 @@ dst: github/user_name #目的端账户名
 因为同步时会将Gitee源仓库覆盖GitHub目的仓库，所以，同步之后，GitHub目的仓库中的 `.github/workflows/SyncToGitee.yml` 文件就没有了，无法执行下次同步，需要把 `.github/workflows/SyncToGitee.yml` 在Gitee源仓库中也存放一份。
 {{< /admonition >}}
 
-</br>
-
-## 参考链接
+{{< admonition type=quote title="更多设置项请参考" open=true >}}
 - [Yikun/hub-mirror-action](https://github.com/Yikun/hub-mirror-action)
 - [yi-Xu-0100/hub-mirror](https://github.com/yi-Xu-0100/hub-mirror)
+{{< /admonition >}}
 
