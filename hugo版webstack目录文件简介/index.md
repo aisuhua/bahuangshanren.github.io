@@ -78,12 +78,12 @@ navigation
 Github Actions自动构建和部署配置文件。
 
 ```yaml
-name: Deploy Navigation
+name: Deploy Navigation #名字随便起
 
 on:
   push:
     branches:
-      - master
+      - master #源码所在分支
 
 jobs:
   deploy:
@@ -91,16 +91,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2.4.13
+      - name: Setup Hugo #安装hugo
+        uses: peaceiris/actions-hugo@v2.4.13 #使用peaceiris开发的actions-hugo
         with:
-          hugo-version: 'latest'
-          extended: true
+          hugo-version: 'latest' #可以指定版本号，也可以使用latest表示最新版
+          extended: true #支持hugo的扩展版
 
-      - name: Build
+      - name: Build #使用hugo构建网页
         run: hugo --gc --minify
 
-      - name: Deploy
+      - name: Deploy #部署博客
         uses: peaceiris/actions-gh-pages@v3.7.3
         with:
           personal_token: ${{ secrets.navigation }} # 个人访问令牌
@@ -171,11 +171,11 @@ jobs:
 
 1. `themes/webstack-hugo/layouts/_default/single.html`
 
-网站默认模板，比如 `关于本站` 的页面。
+    网站默认模板，比如 `关于本站` 的页面。
 
 2. `themes/webstack-hugo/layouts/index.html`
 
-网站首页模板。
+    网站首页模板。
 
 #### /static
 
@@ -185,7 +185,7 @@ jobs:
 
 1. `themes/webstack-hugo/static/assets/css/fontawesome_v4.7.0`
 
-原作者在 `themes/webstack-hugo/static/assets/css/fonts` 这里放了好几种图标，感觉用不太到，就只留下了 `fontawesome` 。又因其版本不高，于是升级，但以我现在的水平只能把 [fontawesome](http://www.fontawesome.com.cn/) 升到 `v4.7.0` ，本来想升到 `v5.0` ，但是 `v5.0` 的结构不同于 `v4.7.0` ，要是换的话，需要处理负责网站框架的CSS和JS。
+    原作者在 `themes/webstack-hugo/static/assets/css/fonts` 这里放了好几种图标，感觉用不太到，就只留下了 `fontawesome` 。又因其版本不高，于是升级，但以我现在的水平只能把 [fontawesome](http://www.fontawesome.com.cn/) 升到 `v4.7.0` ，本来想升到 `v5.0` ，但是 `v5.0` 的结构不同于 `v4.7.0` ，要是换的话，需要处理负责网站框架的CSS和JS。
 
 {{< admonition type=note title="换用图标注意事项" open=true >}}
 在 `single.html` 和 `index.html` 这两个网页模板中，

@@ -208,7 +208,7 @@ type=quote
 4. 此token的访问范围选择 `repo` 和 `workflow` 。
 5. 生成token，记住它的值。
 6. 到博客源码仓库的 `Settings` → `Secrets` 中新建一个 `Actions secrets` ,名字也叫做 `blog` ,Value填入上一步中的个人token的值。
-7. 在博客根目录下创建 `.github\workflows\gh-pages.yml` 文件，写入以下代码：
+7. 在博客源码仓库的根目录下创建 `.github/workflows/gh-pages.yml` 文件，写入以下代码，然后提交：
 
 ```yaml
 name: Deploy Blog #名字随便起
@@ -216,7 +216,7 @@ name: Deploy Blog #名字随便起
 on:
   push:
     branches:
-      - master # 源码所在分支
+      - master #源码所在分支
 
 jobs:
   deploy:
@@ -224,23 +224,23 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2.4.13
+      - name: Setup Hugo #安装hugo
+        uses: peaceiris/actions-hugo@v2.4.13 #使用peaceiris开发的actions-hugo
         with:
-          hugo-version: 'latest'
-          extended: true
+          hugo-version: 'latest' #可以指定版本号，也可以使用latest表示最新版
+          extended: true #支持hugo的扩展版
 
-      - name: Build
+      - name: Build #使用hugo构建博客
         run: hugo --gc --minify
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3.7.3
+      - name: Deploy #部署博客
+        uses: peaceiris/actions-gh-pages@v3.7.3 #使用peaceiris开发的actions-gh-pages
         with:
           personal_token: ${{ secrets.blog }} 
-          external_repository: # 用来发布博客的公有仓库
+          external_repository: #用来发布博客的公有仓库
           publish_branch: master
           publish_dir: ./public
-          cname: # 填写你的域名
+          cname: #填写你的域名
           commit_message: ${{ github.event.head_commit.message }}
 
 ```
