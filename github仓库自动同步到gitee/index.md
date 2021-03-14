@@ -1,19 +1,21 @@
-# GitHub仓库自动同步到Gitee
+# GitHub与Gitee双向自动同步
 
 
-## 设置 `dst_key` 
+## GitHub同步到Gitee
+
+### 设置 `dst_key` 
 
 1. 在 `GitHub` 上打开自己的一个仓库（可以是要同步的源仓库，也可以是别的仓库，总之这个仓库将用来执行GitHub Actions），在它的 `setting` → `Secrets` 中，新建一个 `GITEE_PRIVATE_KEY` 。
 2. 在电脑上生成SSH密钥对。
 3. 复制私钥 `id_rsa` 的值，粘贴为第1步 `GITEE_PRIVATE_KEY` 的 `Value` 。
 3. 复制公钥 `id_rsa.pub` 的值。打开 `Gitee` ，在个人 `设置` → `安全设置` → `SSH公钥` 中新添加公钥，标题无所谓，将公钥 `id_rsa.pub` 的值粘贴上。
 
-## 设置 `dst_token` 
+### 设置 `dst_token` 
 
 1. 在刚才的 `GitHub` 仓库的 `setting` → `Secrets` 中，再新建一个 `GITEE_TOKEN` 。
 2. 打开 `Gitee` ，在个人 `设置` → `安全设置` → `私人令牌` 中新建一个私人令牌，名字无所谓，全选权限，确定，然后复制它的值，粘贴为第1步中 `GITEE_TOKEN` 的 `Value` 。
 
-## 配置 `Github Actions` 
+### 配置 `Github Actions` 
 
 在刚才的GitHub仓库中，新建 `.github/workflows/SyncToGitee.yml` 文件，写入以下代码，然后提交：
 
@@ -59,8 +61,19 @@ on:
 ```
 
 3. 源仓库与目标仓库名称应该设置为相同，至于名称不同的解决方法，作者Yikun暂时还没有实现，参考这个 [issue](https://github.com/Yikun/hub-mirror-action/issues/64) 
-4. 至于将 `Gitee` 中的源仓库同步到 `GitHub` 的目标仓库，大概只需要将 `.github/workflows/SyncToGitee.yml` 中源仓库地址 `src` 和目标仓库地址 `dst` 设置一下即可？我试试再说🤔
+{{< /admonition >}}
 
+## Gitee同步到GitHub
+
+步骤基本一样，只是需要将 `.github/workflows/SyncToGitee.yml` 中的源端账户名 `src` 和目的端账户名 `dst` 调换一下：
+
+```yaml
+src: gitee/user_name #源端账户名
+dst: github/user_name #目的端账户名
+```
+
+{{< admonition type=warning title="注意" open=true >}}
+因为同步时会将Gitee源仓库覆盖GitHub目的仓库，所以，同步之后，GitHub目的仓库中的 `.github/workflows/SyncToGitee.yml` 文件就没有了，无法执行下次同步，需要把 `.github/workflows/SyncToGitee.yml` 在Gitee源仓库中也存放一份。
 {{< /admonition >}}
 
 </br>
