@@ -1,8 +1,15 @@
 User-agent: *
 
-Disallow: /
 Allow: /index.html
-Allow: /categories/
+Allow: /page/
+Disallow: /categories/
+Disallow: /css/
+Disallow: /js/
+Disallow: /lib/
+Disallow: /page/
+Disallow: /posts/
+Disallow: /svg/
+Disallow: /tags/
 Disallow: /*.svg$
 Disallow: /*.jpg$
 Disallow: /*.jpeg$
