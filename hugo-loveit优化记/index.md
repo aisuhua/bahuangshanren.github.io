@@ -1,4 +1,4 @@
-# Hugo+loveit优化记
+# Hugo+Loveit优化记
 
 
 ## 本地调试时加载评论系统
