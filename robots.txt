@@ -1,13 +1,12 @@
 User-agent: *
 
 Allow: /index.html
-Allow: /page/
+Allow: /posts/
 Disallow: /categories/
 Disallow: /css/
 Disallow: /js/
 Disallow: /lib/
 Disallow: /page/
-Disallow: /posts/
 Disallow: /svg/
 Disallow: /tags/
 Disallow: /*.svg$
