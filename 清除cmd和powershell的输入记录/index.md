@@ -59,7 +59,7 @@ PowerShell有自己的历史机制（Get-History，Clear-History），是独立�
 
 会得到PowerShell的输入历史记录存放路径：`C:\Users\username\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt` 
 
-打开一看，好嘛，历史记录全在这，之前一通操作治标不治本，现在手动删除总算可以了。
+打开一看，历史记录全在这，删除后，关闭当前PowerShell，再重新打开，就调不出历史纪录了。
 {{< /admonition >}}
 
 
