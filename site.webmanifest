@@ -1,6 +1,6 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "\u516b\u8352\u5c71\u4eba\u535a\u5ba2",
+    "short_name": "\u516b\u8352\u5c71\u4eba\u535a\u5ba2",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -15,6 +15,6 @@
     ],
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
-    "start_url": "https://www.bahuangshanren.tech",
+    "start_url": "https://www.bahuangshanren.tech/",
     "display": "standalone"
 }
