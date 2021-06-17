@@ -156,7 +156,7 @@ type=quote
         {{- $twikoo := $comment.twikoo}}
         {{- if $twikoo.enable -}}
         <div id="tcomment"></div>
-        <script src="https://cdn.jsdelivr.net/npm/twikoo@1.3.0/dist/twikoo.all.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/twikoo@1.3.1/dist/twikoo.all.min.js"></script>
         <script>
         twikoo.init({
           envId: '',
@@ -186,7 +186,7 @@ type=quote
 ```
 
 {{< admonition type=tip title="更多twikoo配置" open=true >}}
-请到twikoo [官网](https://twikoo.js.org/) 查看。
+云部署及版本更新等信息，请到twikoo [官网](https://twikoo.js.org/) 查看。
 {{< /admonition >}}
 
 ## 部署方式
