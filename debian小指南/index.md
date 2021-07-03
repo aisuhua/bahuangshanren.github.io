@@ -259,7 +259,9 @@ dpkg：错误：在PATH中找不到2个预期程序或它们不可执行。
 sudo pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY dolphin
 ```
 
-## 常用软件安装参考
+## 常用软件安装
+
+[**Bitwarden**](https://bitwarden.com/download/)
 
 [**Chrome**](https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb)
 
@@ -271,9 +273,7 @@ sudo pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY dolphin
 
 **Typora**
 
-{{< admonition type=tip title="下载技巧" open=false >}}
-不建议官网中添加第三方源的方式安装，那种方式慢的不可思议。而是参考 [issues 2625](https://github.com/typora/typora-issues/issues/2625) ，在 [Packages](http://typora.io/linux/Packages) 中找到要下载的版本文件名，然后手动将主页+文件名组合成下载链接，比如：`http://typora.io/linux/typora_0.9.89_amd64.deb`
-{{< /admonition >}}
+> 不建议官网中添加第三方源的方式安装，那种方式慢的不可思议。可以从 [更新日志](https://typora.io/windows/dev_release.html) 中的下载链接直接下载。
 
 [**VS Code**](https://code.visualstudio.com/)
 
